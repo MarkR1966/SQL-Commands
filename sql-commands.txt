@@ -1,0 +1,9 @@
+show databases;      list databases
+
+show tabes;          list tables
+
+create database if not exist world;    Create world database if not exist
+
+use world;            select the database to be used
+
+source world;         take input from file and execute
