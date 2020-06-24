@@ -29,4 +29,12 @@ select name, population from city;   show name and pupulation fields from city
 
 insert into 'table' (Field1, Field2, Field3) values (1, 2, 3); add record to table
 
+update 'table' set field2=x where field1=y; update tabel and change field2=x for record where field1=1
 
+select distint field1 from table;    show only unique field1 values in table
+
+select * from table limit x;          show all information for x no. of records
+
+select * from table order by field1;  show all information from table orted on field 1 ascending
+
+seelct * from table order by field1 desc;  show all information from table sorted on field1 descending
