@@ -23,4 +23,10 @@ Add column_name data_type; Add column
 
 Drop column column_name;   Drop column
 
+Select * from person;      show all records from person
+
+select name, population from city;   show name and pupulation fields from city
+
+insert into 'table' (Field1, Field2, Field3) values (1, 2, 3); add record to table
+
 
