@@ -7,3 +7,20 @@ create database if not exist world;    Create world database if not exist
 use world;            select the database to be used
 
 source world;         take input from file and execute
+
+describe city;        Show structure of table 'city' with fields and details
+
+CREATE TABLE table_name (
+  column_name1 data_type(size) constraint_name,
+  column_name2 data_type(size) constraint_name,
+  PRIMARY KEY (field_name),
+  FOREIGN KEY (other_field) REFERENCES table_name(primary_key)
+);                    create table in batabase with requested fields an constraints
+
+ALTER TABLE table_name;   Modify table
+
+Add column_name data_type; Add column
+
+Drop column column_name;   Drop column
+
+
