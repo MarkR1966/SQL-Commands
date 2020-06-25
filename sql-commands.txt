@@ -38,3 +38,96 @@ select * from table limit x;          show all information for x no. of records
 select * from table order by field1;  show all information from table orted on field 1 ascending
 
 seelct * from table order by field1 desc;  show all information from table sorted on field1 descending
+
+
+Select all Actors from the table.
+select * from actor;
+
+Find the actor with the first name “John”.
+select * from actor where first_name=john;
+
+Find all actors with the surname “Neeson”.
+select * from actor where last_name='Neeson';
+
+Find all actors with Id numbers divisible by 10.
+select * from actor where actor_id%10-0;
+
+What is the description of the movie with ID of 100?
+select description from film where film_id=100;
+
+Find every movie with a rating of “R”.
+select * from film where rating='R';
+
+Find every movie except those with a rating of “R”.
+select * from film where rating != 'R';
+
+Find the 10 shortest movies.
+select * from film order by length limit 10;
+
+Now return only the movie titles.
+select title from film;
+
+Find all movies with Deleted Scenes.
+select * from film where special_features like '%Deleted Scenes%'\G;
+
+Which last names are not repeated?
+select distinct last_name from actor;
+
+Which last names appear more than once?
+select last_name from actor group by last_name having count(last_name)>1;
+
+Which actor has appeared in the most films?
+select fa.actor_id,count(fa.actor_id),a.first_name,a.last_name from film_actor fa join actor a on fa.actor_id=a.actor_ID order by count(fa.actor_id) limit 1;
+
+Is ‘Academy Dinosaur’ available for rent from Store 1?
+select f.title,s.store_id,i.film_id from film f join inventory i using(film_id) join store s using (store_id) where f.title='Academy Dinosaur' and s.store_id=1;
+
+When is ‘Academy Dinosaur’ due?
+select return_date from rental where inventory_id=(select film_id from film where title='Academy Dinosaur');
+
+What is that average running time of all the films in the database?
+select avg(length) from film;
+
+What is the average running time of films by category?
+select avg(length), category from film_list group by category;
+
+How many movies have Robots in them?
+select * from film where description like '%Robot%';
+
+Find the movie(s) with the longest runtime.
+select title,length from film order by legth desc\G;
+
+Count how many movies were released in 2010.
+select count(release_year) from film where release_year='2010';
+
+Find the titles of all horror movies.
+select tite from film_list where category='Horror';
+
+Return the full name of the staff member – in a column named full_name – with the ID of 1.
+select concat(first_name," ",last_name) as full_name from staff where staff_id=1;
+
+Retrieve all movies that Fred Costner has appeared in.
+select concat(a.first_name,' ',a.last_name) as full_name,f.title as film_title from film_actor fa join actor a on fa.actor_id=a.actor_id join film f on fa.film_id=f.film_id where a.first_name='Fred' and a.last_name='Costner';
+
+Find out which location has the most copies of BUCKET BROTHERHOOD.
+select inventory_id, film_id, store_id from inventory i join film_list fl on i.film_id=fl.fid where title like'%bucket brotherhood%';
+
+How many distinct countries are there?
+select distinct country from country;
+
+What are the names of all the languages in the database (sorted alphabetically)?
+selct name as languague from language order by name;
+
+Return the full names (first and last) of actors with “son” in their last name, ordered by their first name.
+select concat(first_name,' ',last_name) as full_name from actor where last_name like '%son';
+
+Create a list of categories and the number of films for each category.
+select c.name,count(c.name) from category c join fim_category fc on c.category_id=fc.category_id group by c.name;
+
+Create a list of actors and the number of movies by each actor.
+select a.actor_id, a.first_name,a.last)name, ncount(a.actor_id) from actor a join film_actor fa on a.actor_id=fa.actor_id group by actor_id having count(a.actor_id)>1;
+
+Which actor/actress has appeared in the most movies?
+
+
+
