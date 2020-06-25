@@ -1,0 +1,14 @@
+man                       opens the linux manual to explain commands
+man man                   open the linux amnual and explains all commands
+man ls                    open the linux manual and show the ls command
+sudo apt update           check all files for update
+apt list --upgradeable    show all files that need upgraded
+sudo apt upgrade -y       upgrade all files
+ls                        show directory
+touch test.txt            create file test.txt if it does not exist
+uname -f                  show linux version
+who                       show user logged on
+user=$(who)               set user to value of who command
+echo 'Hello World'        echo text to console
+echo $user                echo value of user to console
+
