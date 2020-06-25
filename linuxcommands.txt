@@ -11,15 +11,15 @@ who                       show user logged on
 user=$(who)               set user to value of who command
 echo 'Hello World'        echo text to console
 echo $user                echo value of user to console
-pwd                       echo user directory
+pwd                       print working directory
 ps                        show running processes
 top                       show system resources
 htop                      top with colours and more functionality
 kill -9 PID               kill process with the required PID
 cat file.txt              output file.txt to console
 wc test.txt               show wordcount in test.txt
-head test.txt             show snippet from start of file
+head test.txt             show 10 lines from start of file
 more test.txt             scroll through file slowly
-tail test.txt             show snippet from end of file
+tail test.txt             show 10 lines from end of file
 grep                      searches for patterns in files or output from a piped command
-
+Ctrl-L                    clear terminal screen
